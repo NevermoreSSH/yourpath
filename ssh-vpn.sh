@@ -242,8 +242,8 @@ chmod +x dns
 chmod +x nf
 chmod +x limit
 echo "0 6 * * * root reboot" >> /etc/crontab
-echo "0 0 * * * root /usr/bin/xp" >> /etc/crontab
-echo "*/2 * * * * root /usr/bin/cleaner" >> /etc/crontab
+echo "0 0 * * * root /usr/local/sbin/xp" >> /etc/crontab
+echo "57 * * * * * root /usr/bin/cleaner" >> /etc/crontab
 cd
 
 service cron restart >/dev/null 2>&1

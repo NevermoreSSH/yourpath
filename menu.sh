@@ -5,6 +5,18 @@ y="\033[0;1;37m"
 yy="\033[0;1;32m"
 yl="\033[0;1;33m"
 wh="\033[0m"
+## Foreground
+DEFBOLD='\e[39;1m'
+RB='\e[31;1m'
+GB='\e[32;1m'
+YB='\e[33;1m'
+BB='\e[34;1m'
+MB='\e[35;1m'
+CB='\e[35;1m'
+WB='\e[37;1m'
+#Domain & IPVPS
+domain=$(cat /usr/local/etc/xray/domain)
+IPVPS=$(curl -s ipinfo.io/ip)
 # OS Uptime
 uptime="$(uptime -p | cut -d " " -f 2-10)"
 # RAM Info
@@ -13,40 +25,55 @@ uram=$(free -m | awk 'NR==2 {print $3}')
 # Total BANDWIDTH
 ttoday="$(vnstat -i eth0 | grep "today" | awk '{print $8" "substr ($9, 1, 1)}')"
 tmon="$(vnstat -i eth0 -m | grep "$(date +"%b '%y")" | awk '{print $9" "substr ($10, 1, 1)}')"
-echo -e "$y                  MAIN MENU $wh"
-echo -e "$y            Script Mod By NevermoreSSH $wh"
-echo -e "$y-------------------------------------------------$wh"
-echo -e "$y  OS      :  "$(hostnamectl | grep "Operating System" | cut -d ' ' -f5-)
-echo -e "$y  KERNEL  :  $(uname -r)"
-echo -e "$y  UPTIME  :  $uptime"
-echo -e "$y  RAM     :  $uram MB / $tram MB"
-echo -e "$y  DOMAIN  :  $domain"
-echo -e "$y  IPVPS   :  $IPVPS"
-echo -e "$y-------------------------------------------------$wh"
-echo -e "$yy 1$y.  XRAY VMESS MENU$wh"
-echo -e "$yy 2$y.  XRAY VLESS MENU$wh"
-echo -e "$yy 3$y.  XRAY TROJAN MENU$wh"
-echo -e "$yy 4$y.  XRAY TROJAN TCP XTLS$wh"
-echo -e "$yy 5$y.  XRAY TROJAN TCP$wh"
-echo -e "$yy 6$y.  INSTALL ADS BLOCK$wh"
-echo -e "$yy 7$y.  ADS BLOCK MENU$wh"
-echo -e "$yy 8$y.  DNS CHANGER$wh"
-echo -e "$yy 9$y.  NETFLIX CHECKER$wh"
-echo -e "$yy 10$y. INSTALL TCP BBRPLUS$wh"
-echo -e "$yy 11$y. LIMIT BANDWITH SPEED$wh"
-echo -e "$yy 12$y. CHANGE DOMAIN$wh"
-echo -e "$yy 13$y. RENEW CERT XRAYS$wh"
-echo -e "$yy 14$y. CHECK VPN STATUS$wh"
-echo -e "$yy 15$y. CHECK VPN PORT$wh"
-echo -e "$yy 16$y. RESTART VPN SERVICES$wh"
-echo -e "$yy 17$y. SPEEDTEST$wh"
-echo -e "$yy 18$y. CHECK CPU & RAM$wh"
-echo -e "$yy 19$y. CHECK BANDWIDTH$wh"
-echo -e "$yy 20$y. BACKUP$wh"
-echo -e "$yy 21$y. RESTORE$wh"
-echo -e "$yy 22$y. REBOOT$wh"
-echo -e "$yy 23$y. EXIT$wh"
-echo -e "$y-------------------------------------------------$wh"
+echo ""
+echo -e "${BB}————————————————————————————————————————————————————————${NC}"
+echo -e "      ${WB}Multiport Websocket Autoscript By NevermoreSSH${NC}"
+echo -e "${BB}————————————————————————————————————————————————————————${NC}"
+echo -e "               ${WB}»»» Server Information «««${NC}             "
+echo -e "${BB}————————————————————————————————————————————————————————${NC}"
+echo -e "  ${RB}♦️${NC} ${YB}OS      :  "$(hostnamectl | grep "Operating System" | cut -d ' ' -f5-) ${NC}         
+echo -e "  ${RB}♦️${NC} ${YB}KERNEL  :  $(uname -r) ${NC} "
+echo -e "  ${RB}♦️${NC} ${YB}UPTIME  :  $uptime ${NC} "
+echo -e "  ${RB}♦️${NC} ${YB}RAM     :  $uram MB / $tram MB ${NC} "
+echo -e "  ${RB}♦️${NC} ${YB}DOMAIN  :  $domain ${NC} "
+echo -e "  ${RB}♦️${NC} ${YB}IPVPS   :  $IPVPS ${NC} "
+echo -e "${BB}————————————————————————————————————————————————————————${NC}"
+echo -e "                     ${WB}»»» Xray Menu «««${NC}          "
+echo -e "${BB}————————————————————————————————————————————————————————${NC}"
+echo -e "  ${RB}01${NC} ${YB}XRAY VMESS WS${NC}"
+echo -e "  ${RB}02${NC} ${YB}XRAY VLESS WS${NC}"
+echo -e "  ${RB}03${NC} ${YB}XRAY TROJAN WS${NC}"
+echo -e "  ${RB}04${NC} ${YB}XRAY TROJAN XTLS${NC}"
+echo -e "  ${RB}05${NC} ${YB}XRAY TROJAN TCP${NC}"
+echo -e "${BB}————————————————————————————————————————————————————————${NC}"
+echo -e "                     ${WB}»»» VPS Menu «««${NC}                 "
+echo -e "${BB}————————————————————————————————————————————————————————${NC}"
+echo -e "  ${RB}06${NC} ${YB}INSTALL ADS BLOCK ${NC}"
+echo -e "  ${RB}07${NC} ${YB}INSTALL TCP BBRPLUS ${NC}"
+echo -e "  ${RB}08${NC} ${YB}ADS BLOCK MENU ${NC}"
+echo -e "  ${RB}09${NC} ${YB}DNS CHANGER ${NC}"
+echo -e "  ${RB}10${NC} ${YB}NETFLIX CHECKER ${NC}"
+echo -e "  ${RB}11${NC} ${YB}LIMIT BANDWITH SPEED ${NC}"
+echo -e ""
+echo -e "  ${RB}12${NC} ${YB}CHANGE DOMAIN ${NC}"
+echo -e "  ${RB}13${NC} ${YB}RENEW CERT XRAYS ${NC}"
+echo -e "  ${RB}14${NC} ${YB}CHECK VPN STATUS ${NC}"
+echo -e "  ${RB}15${NC} ${YB}CHECK VPN PORT ${NC}"
+echo -e "  ${RB}16${NC} ${YB}RESTART VPN SERVICE ${NC}"
+echo -e "  ${RB}17${NC} ${YB}SPEEDTEST ${NC}"
+echo -e "  ${RB}18${NC} ${YB}CHECK CPU & RAM ${NC}"
+echo -e "  ${RB}19${NC} ${YB}CHECK BANDWIDTH ${NC}"
+echo -e "  ${RB}20${NC} ${YB}BACKUP ${NC}"
+echo -e "  ${RB}21${NC} ${YB}RESTORE ${NC}"
+echo -e "  ${RB}22${NC} ${YB}REBOOT ${NC}"
+echo -e "  ${RB}23${NC} ${YB}EXIT ${NC}"
+echo -e "${BB}————————————————————————————————————————————————————————${NC}"
+echo -e "                  ${WB}»»» Total Bandwith «««${NC}             "
+echo -e "${BB}————————————————————————————————————————————————————————${NC}"
+echo -e "  ${RB}♦️${NC} ${YB}Daily Data Usage    : $ttoday ${NC}"
+echo -e "  ${RB}♦️${NC} ${YB}Monthly Data Usage  : $tmon ${NC}"
+echo -e "${BB}————————————————————————————————————————————————————————${NC}"
+echo ""
 read -p "Select From Options [ 1 - 22 ] : " menu
 case $menu in
 1)
@@ -73,19 +100,19 @@ menu-xtr
 clear
 ins-helium
 ;;
-7)
+8)
 clear
 helium
 ;;
-8)
+9)
 clear
 dns
 ;;
-9)
+10)
 clear
 nf
 ;;
-10)
+7)
 clear
 bbr
 ;;

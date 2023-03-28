@@ -66,4 +66,5 @@ sysctl -w net.ipv6.conf.all.disable_ipv6=1 && sysctl -w net.ipv6.conf.default.di
 ♦️ CHECK CREATED CONFIG <br>
 ♦️ AUTOMATIC CLEAR LOG <br>
 ♦️ AUTOMATIC VPS REBOOT <br>
+♦️ AUTOMATIC DELETE EXPIRED CONFIG <br>
 ♦️ BACKUP & RESTORE <br></br>

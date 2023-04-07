@@ -244,6 +244,12 @@ chmod +x limit
 echo "0 6 * * * root reboot" >> /etc/crontab
 echo "0 0 * * * root /usr/local/sbin/xp" >> /etc/crontab
 echo "0 5 * * * root /usr/bin/cleaner" >> /etc/crontab
+echo "0 9 * * * root restart" >> /etc/crontab
+echo "0 12 * * * root restart" >> /etc/crontab
+echo "0 15 * * * root restart" >> /etc/crontab
+echo "0 18 * * * root restart" >> /etc/crontab
+echo "0 21 * * * root restart" >> /etc/crontab
+echo "0 3 * * * root restart" >> /etc/crontab
 cd
 
 service cron restart >/dev/null 2>&1

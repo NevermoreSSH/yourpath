@@ -22,39 +22,18 @@ echo -e "\e[36m╘════════════════════�
 
  [\033[1;36m•0 \033[0m]  Back To Main Menu"
 echo""
-echo -e " \033[1;37mPress [ Ctrl+C ] • To-Exit-Script\033[0m"
+echo -e " \033[1;37mPress [ Ctrl+C or x ] • To-Exit-Script\033[0m"
 echo ""
-echo -ne "Select menu : "; read x
-if [[ $(cat /opt/.ver) = $serverV ]] > /dev/null 2>&1; then
-    if [[ $x -eq 1 ]]; then
-       add-tr
-       read -n1 -r -p "Press any key to continue..."
-       menu
-    elif [[ $x -eq 2 ]]; then
-       trial-tr
-       read -n1 -r -p "Press any key to continue..."
-       menu
-    elif [[ $x -eq 3 ]]; then
-       cek-tr
-       read -n1 -r -p "Press any key to continue..."
-       menu
-    elif [[ $x -eq 4 ]]; then
-       del-tr
-       read -n1 -r -p "Press any key to continue..."
-       menu
-    elif [[ $x -eq 5 ]]; then
-       renew-tr
-       read -n1 -r -p "Press any key to continue..."
-       menu
-    elif [[ $x -eq 6 ]]; then
-       user-tr
-       read -n1 -r -p "Press any key to continue..."
-       menu
-    elif [[ $x -eq 7 ]]; then
-       clear
-       menu
-    else
-       clear
-       menu-tr
-    fi
-fi
+read -p " Select menu : " opt
+echo -e ""
+case $opt in
+1) clear ; add-tr ;;
+2) clear ; trial-tr ;;
+3) clear ; cek-tr ;;
+4) clear ; del-tr ;;
+5) clear ; renew-tr ;;
+6) clear ; user-tr ;;
+0) clear ; menu ;;
+x) exit ;;
+*) echo "Wrong Button" ; sleep 1 ; menu-tr ;;
+esac

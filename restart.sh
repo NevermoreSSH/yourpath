@@ -94,5 +94,4 @@ fun_bar 'res10'
 echo -e "  \033[1;91m Service Restart Trojan TCP TLS\033[1;37m"
 fun_bar 'res11'
 echo -e ""
-read -n 1 -s -r -p "Press any key to back on menu"
-menu
+echo -e "Script Mod By NevermoreSSH"

@@ -24,37 +24,16 @@ echo -e "\e[36m╘════════════════════�
 echo ""
 echo -e " \033[1;37mPress [ Ctrl+C ] • To-Exit-Script\033[0m"
 echo ""
-echo -ne "Select menu : "; read x
-if [[ $(cat /opt/.ver) = $serverV ]] > /dev/null 2>&1; then
-    if [[ $x -eq 1 ]]; then
-       add-ws
-       read -n1 -r -p "Press any key to continue..."
-       menu
-    elif [[ $x -eq 2 ]]; then
-       trial-ws
-       read -n1 -r -p "Press any key to continue..."
-       menu
-    elif [[ $x -eq 3 ]]; then
-       cek-ws
-       read -n1 -r -p "Press any key to continue..."
-       menu
-    elif [[ $x -eq 4 ]]; then
-       del-ws
-       read -n1 -r -p "Press any key to continue..."
-       menu
-    elif [[ $x -eq 5 ]]; then
-       renew-ws
-       read -n1 -r -p "Press any key to continue..."
-       menu
-    elif [[ $x -eq 6 ]]; then
-       user-ws
-       read -n1 -r -p "Press any key to continue..."
-       menu
-    elif [[ $x -eq 0 ]]; then
-       clear
-       menu
-    else
-       clear
-       menu-ws
-    fi
-fi
+read -p " Select menu : " opt
+echo -e ""
+case $opt in
+1) clear ; add-ws ;;
+2) clear ; trial-ws ;;
+3) clear ; cek-ws ;;
+4) clear ; del-ws ;;
+5) clear ; renew-ws ;;
+6) clear ; user-ws ;;
+0) clear ; menu ;;
+x) exit ;;
+*) echo "Wrong Button" ; sleep 1 ; menu-ws ;;
+esac

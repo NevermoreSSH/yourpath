@@ -416,5 +416,4 @@ echo -e "Created On        : $hariini"
 echo -e "Expired On        : $exp"
 echo -e "═══════════════════"
 echo -e ""
-echo -e "Autoscript By NevermoreSSH"
-echo -e "" 
+echo -e "Script Mod By NevermoreSSH"

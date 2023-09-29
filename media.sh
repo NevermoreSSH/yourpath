@@ -286,5 +286,5 @@ else
 fi
 echo ""
 echo -e "${Font_Green}Finished Test${Font_Suffix}"
-echo ""
-read -n1 -r -p "Press any key to continue..."
+echo -e ""
+echo -e "Script Mod By NevermoreSSH"

@@ -22,7 +22,7 @@ NC='\e[0m'
 export Server_URL="raw.githubusercontent.com/NevermoreSSH/yourpath/main"
 dateFromServer=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Date | sed -e 's/< Date: //')
 biji=`date +"%Y-%m-%d" -d "$dateFromServer"`
-#########################
+##########################
 MYIP=$(wget -qO- ipv4.icanhazip.com);
 echo "Checking VPS"
 clear

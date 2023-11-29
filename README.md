@@ -56,6 +56,7 @@ apt update && apt install -y bzip2 gzip coreutils screen curl && wget https://ra
 <br>
 
 ♦️ SUPPORT CUSTOM PATH BY DHARAK36 XRAY-CORE V1.6.5 <br>
+♦️ XRAY-CORE CHANGER LATEST <br>
 ♦️ NEW UPDATE BBRPLUS 5.15.96 <br>
 ♦️ BANDWITH MONITOR <br>
 ♦️ RAM & CPU MONITOR <br>

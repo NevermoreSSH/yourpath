@@ -74,10 +74,10 @@ exp=`date -d "$masaaktif days" +"%Y-%m-%d"`
 sed -i '/#trojan-xtls$/a\### '"$user $exp"'\
 },{"password": "'""$uuid""'","flow": "xtls-rprx-direct","email": "'""$user""'"' /usr/local/etc/xray/xtrojan.json
 
-trojanlink1="trojan://${uuid}@${sts}${domain}:443?allowInsecure=1&security=xtls&headerType=none&type=tcp&flow=xtls-rprx-direct&sni=${sni}#XRAY_TROJAN_DIRECT_${user}"
-trojanlink2="trojan://${uuid}@${sts}${domain}:443?allowInsecure=1&security=xtls&headerType=none&type=tcp&flow=xtls-rprx-direct-udp443&sni=${sni}#XRAY_TROJAN_DIRECTUDP443_${user}"
-trojanlink3="trojan://${uuid}@${sts}${domain}:443?allowInsecure=1&security=xtls&headerType=none&type=tcp&flow=xtls-rprx-splice&sni=${sni}#XRAY_TROJAN_SPLICE_${user}"
-trojanlink4="trojan://${uuid}@${sts}${domain}:443?allowInsecure=1&security=xtls&headerType=none&type=tcp&flow=xtls-rprx-splice-udp443&sni=${sni}#XRAY_TROJAN_SPLICEUDP443_${user}"
+trojanlink1="trojan://${uuid}@${sts}${domain}:443?allowInsecure=1&security=xtls&headerType=none&type=tcp&flow=xtls-rprx-direct&sni=${sni}#TROJAN_DIRECT_${user}"
+trojanlink2="trojan://${uuid}@${sts}${domain}:443?allowInsecure=1&security=xtls&headerType=none&type=tcp&flow=xtls-rprx-direct-udp443&sni=${sni}#TROJAN_DIRECTUDP443_${user}"
+trojanlink3="trojan://${uuid}@${sts}${domain}:443?allowInsecure=1&security=xtls&headerType=none&type=tcp&flow=xtls-rprx-splice&sni=${sni}#TROJAN_SPLICE_${user}"
+trojanlink4="trojan://${uuid}@${sts}${domain}:443?allowInsecure=1&security=xtls&headerType=none&type=tcp&flow=xtls-rprx-splice-udp443&sni=${sni}#TROJAN_SPLICEUDP443_${user}"
 
 systemctl restart xray@xtrojan.service
 service cron restart

@@ -36,7 +36,12 @@ PLEASE MAKE SURE YOUR DOMAIN SETTINGS IN YOUR CLOUDFLARE AS BELOW (SSL/TLS SETTI
   ```html
  apt-get update && apt-get upgrade -y && apt dist-upgrade -y && update-grub && reboot
  ```
-♦️ Installation Link<br>
+♦️ Installation ( Xray-core Custom ) Link<br>
+
+  ```html
+sysctl -w net.ipv6.conf.all.disable_ipv6=1 && sysctl -w net.ipv6.conf.default.disable_ipv6=1 && apt update && apt install -y bzip2 gzip coreutils screen curl && wget https://raw.githubusercontent.com/NevermoreSSH/yourpath/main/setup.sh && chmod +x setup.sh && ./setup.sh
+  ```
+♦️ Installation ( Xray-core Official ) Link<br>
 
   ```html
 sysctl -w net.ipv6.conf.all.disable_ipv6=1 && sysctl -w net.ipv6.conf.default.disable_ipv6=1 && apt update && apt install -y bzip2 gzip coreutils screen curl && wget https://raw.githubusercontent.com/NevermoreSSH/yourpath/main/setup.sh && chmod +x setup.sh && ./setup.sh

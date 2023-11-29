@@ -100,7 +100,7 @@ EOF
 cat> /usr/local/etc/xray/$user-none.json << EOF
       {
       "v": "2",
-      "ps": "XRAY_VMESS_NON_TLS_${user}",
+      "ps": "XRAY_VMESS_NTLS_${user}",
       "add": "${sts}${domain}",
       "port": "80",
       "id": "${uuid}",
@@ -269,13 +269,13 @@ proxies:
         Host: ${domain}
     udp: true
 proxy-groups:
-  - name: Geo-Autoscript
+  - name: NevermoreSSH-Autoscript
     type: select
     proxies:
       - XRAY_VMESS_TLS_${user}
       - DIRECT
 rules:
-  - MATCH,Geo-Autoscript
+  - MATCH,NevermoreSSH-Autoscript
 EOF
 
 cat > /home/vps/public_html/$user-VMESSNTLS.yaml <<EOF
@@ -409,7 +409,7 @@ dns:
     - "*.mcdn.bilivideo.cn"
     - +.media.dssott.com
 proxies:
-  - name: XRAY_VMESS_NON_TLS_${user}
+  - name: XRAY_VMESS_NTLS_${user}
     server: ${sts}${domain}
     port: 80
     type: vmess
@@ -426,13 +426,13 @@ proxies:
         Host: ${domain}
     udp: true
 proxy-groups:
-  - name: Geo-Autoscript
+  - name: NevermoreSSH-Autoscript
     type: select
     proxies:
-      - XRAY_VMESS_NON_TLS_${user}
+      - XRAY_VMESS_NTLS_${user}
       - DIRECT
 rules:
-  - MATCH,Geo-Autoscript
+  - MATCH,NevermoreSSH-Autoscript
 EOF
 
 clear

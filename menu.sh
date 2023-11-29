@@ -155,7 +155,7 @@ wget -q -O /usr/bin/xraychanger "https://raw.githubusercontent.com/NevermoreSSH/
 ;;
 24)
 clear
-exit
+exit && exit
 ;;
 20)
 clear

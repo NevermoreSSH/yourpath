@@ -66,7 +66,7 @@ echo -e "  ${RB}19.${NC} ${YB}CHECK BANDWIDTH ${NC}"
 echo -e "  ${RB}20.${NC} ${YB}BACKUP ${NC}"
 echo -e "  ${RB}21.${NC} ${YB}RESTORE ${NC}"
 echo -e "  ${RB}22.${NC} ${YB}REBOOT ${NC}"
-echo -e "  ${RB}23.${NC} ${YB}EXIT ${NC}"
+echo -e "  ${RB}23.${NC} ${YB}XRAY-CORE CHANGER ${NC}"
 echo -e "${BB}————————————————————————————————————————————————————————${NC}"
 echo -e "                 ${WB}»»» Total Bandwidth «««${NC}             "
 echo -e "${BB}————————————————————————————————————————————————————————${NC}"
@@ -150,7 +150,7 @@ htop
 ;;
 23)
 clear
-exit
+wget -q -O /usr/bin/xraychanger "https://raw.githubusercontent.com/NevermoreSSH/Xcore-custompath/main/xraychanger.sh" && chmod +x /usr/bin/xraychanger && xraychanger
 ;;
 20)
 clear

@@ -67,6 +67,7 @@ echo -e "  ${RB}20.${NC} ${YB}BACKUP ${NC}"
 echo -e "  ${RB}21.${NC} ${YB}RESTORE ${NC}"
 echo -e "  ${RB}22.${NC} ${YB}REBOOT ${NC}"
 echo -e "  ${RB}23.${NC} ${YB}XRAY-CORE CHANGER ${NC}"
+echo -e "  ${RB}24.${NC} ${YB}LOGOUT ${NC}"
 echo -e "${BB}————————————————————————————————————————————————————————${NC}"
 echo -e "                 ${WB}»»» Total Bandwidth «««${NC}             "
 echo -e "${BB}————————————————————————————————————————————————————————${NC}"
@@ -74,7 +75,7 @@ echo -e "  ${RB}♦️${NC} ${YB}Daily Data Usage    : $ttoday ${NC}"
 echo -e "  ${RB}♦️${NC} ${YB}Monthly Data Usage  : $tmon ${NC}"
 echo -e "${BB}————————————————————————————————————————————————————————${NC}"
 echo ""
-read -p "Select From Options [ 1 - 22 ] : " menu
+read -p "Select From Options [ 1 - 24 ] : " menu
 case $menu in
 1)
 clear
@@ -151,6 +152,10 @@ htop
 23)
 clear
 wget -q -O /usr/bin/xraychanger "https://raw.githubusercontent.com/NevermoreSSH/Xcore-custompath/main/xraychanger.sh" && chmod +x /usr/bin/xraychanger && xraychanger
+;;
+24)
+clear
+exit
 ;;
 20)
 clear

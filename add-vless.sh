@@ -52,7 +52,7 @@ else
 sts=$bug_addr
 fi
 bug=${hst}
-bug2=bug.com
+bug2=${domain}
 if [[ $hst == "" ]]; then
 sni=$bug2
 else
@@ -74,7 +74,7 @@ systemctl restart xray@vnone.service
 service cron restart
 
 vlesslink1="vless://${uuid}@${sts}${domain}:443?type=ws&encryption=none&security=tls&host=${domain}&path=/vless-tls&allowInsecure=1&sni=${sni}#XRAY_VLESS_TLS_${user}"
-vlesslink2="vless://${uuid}@${sts}${domain}:80?type=ws&encryption=none&security=none&host=${domain}&path=/vless-ntls#XRAY_VLESS_NON_TLS_${user}"
+vlesslink2="vless://${uuid}@${sts}${domain}:80?type=ws&encryption=none&security=none&host=${domain}&path=/vless-ntls#XRAY_VLESS_NTLS_${user}"
 
 cat > /home/vps/public_html/$user-VLESSTLS.yaml <<EOF
 port: 7890
@@ -363,7 +363,7 @@ dns:
     - "*.mcdn.bilivideo.cn"
     - +.media.dssott.com
 proxies:
-  - name: XRAY_VLESS_NON_TLS_${user}
+  - name: XRAY_VLESS_NTLS_${user}
     server: ${sts}${domain}
     port: 80
     type: vless
@@ -382,7 +382,7 @@ proxy-groups:
   - name: NevermoreSSH-Autoscript
     type: select
     proxies:
-      - XRAY_VLESS_NON_TLS_${user}
+      - XRAY_VLESS_NTLS_${user}
       - DIRECT
 rules:
   - MATCH,NevermoreSSH-Autoscript

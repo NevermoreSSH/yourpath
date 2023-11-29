@@ -15,17 +15,18 @@ echo ""
 echo " This Feature Can Only Be Used According To VPS Data With This Autoscript"
 echo " Please Insert VPS Data Backup Link To Restore The Data"
 echo ""
-read -rp " Password File: " -e InputPass
+#read -rp " Password File: " -e InputPass
 read -rp " Link File: " -e url
 wget -O backup.zip "$url"
-unzip -P $InputPass /root/backup.zip &> /dev/null
+#unzip -P $InputPass /root/backup.zip &> /dev/null
+unzip backup.zip
 rm -f backup.zip
 sleep 1
 echo -e "[ ${green}INFO${NC} ] Start Restore . . . "
 #cp -r /root/backup/.acme.sh /root/ &> /dev/null
 #cp -r /root/backup/premium-script /var/lib/ &> /dev/null
 #cp -r /root/backup/xray /usr/local/etc/ &> /dev/null
-cp -r /root/backup/*.json /etc/xray/ >/dev/null
+cp -r /root/backup/*.json /usr/local/etc/xray/ >/dev/null
 cp -r /root/backup/public_html /home/vps/ &> /dev/null
 cp -r /root/backup/crontab /etc/ &> /dev/null
 cp -r /root/backup/cron.d /etc/ &> /dev/null
@@ -45,5 +46,5 @@ systemctl restart xray@trnone.service
 systemctl restart xray@xtrojan.service
 systemctl restart xray@trojan.service
 service cron restart
-sleep 0.5
+sleep 2
 clear

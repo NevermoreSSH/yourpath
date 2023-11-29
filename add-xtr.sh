@@ -65,7 +65,7 @@ else
 sts=$bug_addr
 fi
 bug=${hst}
-bug2=bug.com
+bug2=${domain}
 if [[ $hst == "" ]]; then
 sni=$bug2
 else

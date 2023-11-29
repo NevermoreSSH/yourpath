@@ -68,4 +68,4 @@ apt update && apt install -y bzip2 gzip coreutils screen curl && wget https://ra
 ♦️ AUTOMATIC CLEAR LOG <br>
 ♦️ AUTOMATIC VPS AUTOREBOOT 06.00 GMT+8 <br>
 ♦️ AUTOMATIC DELETE EXPIRED ACCOUNT <br>
-♦️ BACKUP & RESTORE <br></br>
+♦️ AUTOMATIC BACKUP & RESTORE <br></br>

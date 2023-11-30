@@ -417,3 +417,6 @@ echo -e "Expired On        : $exp"
 echo -e "═══════════════════"
 echo -e ""
 echo -e "Script Mod By NevermoreSSH"
+echo ""
+read -p "$( echo -e "Press ${orange}[ ${NC}${green}Enter${NC} ${CYAN}]${NC} Back to menu . . .") "
+menu

@@ -1218,4 +1218,4 @@ wget -O trial-xtr "https://${Server_URL}/trial-xtr.sh" && chmod +x trial-xtr
 # // OTHER FILES
 echo -e "[ ${green}INFO${NC} ] Downloading Others Files"
 sleep 1
-rm -r xray.sh
+rm -r xray2.sh

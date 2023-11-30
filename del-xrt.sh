@@ -9,7 +9,7 @@ clear
 NUMBER_OF_CLIENTS=$(grep -c -E "^### " "/usr/local/etc/xray/xtrojan.json")
 	if [[ ${NUMBER_OF_CLIENTS} == '0' ]]; then
         echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-        echo -e "\\E[0;41;36m Delete XRAY TROJAN TCP XTLS Account \E[0m"
+        echo -e "\\E[0;47;30m Delete XRAY TROJAN TCP XTLS Account \E[0m"
         echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 		echo ""
 		echo "You have no existing clients!"

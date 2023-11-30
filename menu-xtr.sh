@@ -10,7 +10,7 @@ B='\033[0;36m'
 N='\e[0m'
 clear
 echo -e "\e[36m╒════════════════════════════════════════════╕\033[0m"
-echo -e " \E[0;41;36m            XRAY TROJAN TCP MENU            \E[0m"
+echo -e " \E[0;47;30m            XRAY TROJAN TCP MENU            \E[0m"
 echo -e "\e[36m╘════════════════════════════════════════════╛\033[0m
 
  [\033[1;36m•1 \033[0m]  Add XRAY Trojan TCP Account

@@ -12,7 +12,7 @@ NC='\e[0m'
 NUMBER_OF_CLIENTS=$(grep -c -E "^### " "/usr/local/etc/xray/trojanws.json")
 	if [[ ${NUMBER_OF_CLIENTS} == '0' ]]; then
         echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-        echo -e " \E[0;47;30m   Delete XRAY Trojan WS Account   \E[0m"
+        echo -e "\\E[0;47;30m   Delete XRAY Trojan WS Account   \E[0m"
         echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 		echo ""
 		echo "You have no existing clients!"
@@ -20,7 +20,7 @@ NUMBER_OF_CLIENTS=$(grep -c -E "^### " "/usr/local/etc/xray/trojanws.json")
 		exit 1
 	fi
         echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-        echo -e " \E[0;47;30m   Delete XRAY Trojan WS Account   \E[0m"
+        echo -e "\\E[0;47;30m   Delete XRAY Trojan WS Account   \E[0m"
         echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 	
 	echo " Select the existing client you want to remove"

@@ -31,7 +31,7 @@ domain=$(cat /root/domain)
 MYIP=$(wget -qO- ipv4.icanhazip.com);
 until [[ $user =~ ^[a-zA-Z0-9_]+$ && ${CLIENT_EXISTS} == '0' ]]; do
 		echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-        echo -e "\E[0;41;36m  Add XRAY Trojan TCP XTLS Account  \E[0m"
+        echo -e "\E[0;41;36m  Add XRAY Vless TCP XTLS Account  \E[0m"
         echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 		read -rp "Username : " -e user
 		CLIENT_EXISTS=$(grep -w $user /usr/local/etc/xray/xtrojan.json | wc -l)
@@ -39,7 +39,7 @@ until [[ $user =~ ^[a-zA-Z0-9_]+$ && ${CLIENT_EXISTS} == '0' ]]; do
 		if [[ ${CLIENT_EXISTS} == '1' ]]; then
 clear
 		echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-        echo -e "\E[0;41;36m  Add XRAY Trojan TCP XTLS Account  \E[0m"
+        echo -e "\E[0;41;36m  Add XRAY Vless TCP XTLS Account  \E[0m"
         echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 		echo ""
 		echo "A client with the specified name was already created, please choose another name."
@@ -74,10 +74,10 @@ exp=`date -d "$masaaktif days" +"%Y-%m-%d"`
 sed -i '/#trojan-xtls$/a\### '"$user $exp"'\
 },{"password": "'""$uuid""'","flow": "xtls-rprx-direct","email": "'""$user""'"' /usr/local/etc/xray/xtrojan.json
 
-trojanlink1="trojan://${uuid}@${sts}${domain}:443?allowInsecure=1&security=xtls&headerType=none&type=tcp&flow=xtls-rprx-direct&sni=${sni}#TROJAN_DIRECT_${user}"
-trojanlink2="trojan://${uuid}@${sts}${domain}:443?allowInsecure=1&security=xtls&headerType=none&type=tcp&flow=xtls-rprx-direct-udp443&sni=${sni}#TROJAN_DIRECTUDP443_${user}"
-trojanlink3="trojan://${uuid}@${sts}${domain}:443?allowInsecure=1&security=xtls&headerType=none&type=tcp&flow=xtls-rprx-splice&sni=${sni}#TROJAN_SPLICE_${user}"
-trojanlink4="trojan://${uuid}@${sts}${domain}:443?allowInsecure=1&security=xtls&headerType=none&type=tcp&flow=xtls-rprx-splice-udp443&sni=${sni}#TROJAN_SPLICEUDP443_${user}"
+trojanlink1="vless://${uuid}@${sts}${domain}:443?allowInsecure=1&security=xtls&headerType=none&type=tcp&flow=xtls-rprx-direct&sni=${sni}#TROJAN_DIRECT_${user}"
+trojanlink2="vless://${uuid}@${sts}${domain}:443?allowInsecure=1&security=xtls&headerType=none&type=tcp&flow=xtls-rprx-direct-udp443&sni=${sni}#TROJAN_DIRECTUDP443_${user}"
+trojanlink3="vless://${uuid}@${sts}${domain}:443?allowInsecure=1&security=xtls&headerType=none&type=tcp&flow=xtls-rprx-splice&sni=${sni}#TROJAN_SPLICE_${user}"
+trojanlink4="vless://${uuid}@${sts}${domain}:443?allowInsecure=1&security=xtls&headerType=none&type=tcp&flow=xtls-rprx-splice-udp443&sni=${sni}#TROJAN_SPLICEUDP443_${user}"
 
 systemctl restart xray@xtrojan.service
 service cron restart
@@ -384,7 +384,7 @@ EOF
 
 clear
 echo -e ""
-echo -e "════[XRAY TROJAN TCP XTLS]═════"
+echo -e "════[XRAY VLESS TCP XTLS]═════"
 echo -e "Remarks              : ${user}"
 echo -e "Domain               : ${domain}"
 echo -e "IP/Host              : ${MYIP}"
@@ -405,10 +405,10 @@ echo -e "Link Splice          : ${trojanlink3}"
 echo -e "═══════════════════"
 echo -e "Link Splice UDP 443  : ${trojanlink4}"
 echo -e "═══════════════════"
-echo -e "YAML Direct          : http://${MYIP}:81/$user-TRDIRECT.yaml"
-echo -e "═══════════════════"
-echo -e "YAML Splice          : http://${MYIP}:81/$user-TRSPLICE.yaml"
-echo -e "═══════════════════"
+#echo -e "YAML Direct          : http://${MYIP}:81/$user-TRDIRECT.yaml"
+#echo -e "═══════════════════"
+#echo -e "YAML Splice          : http://${MYIP}:81/$user-TRSPLICE.yaml"
+#echo -e "═══════════════════"
 echo -e "Created On           : $hariini"
 echo -e "Expired On           : $exp"
 echo -e "═══════════════════"

@@ -194,3 +194,6 @@ echo -e "═══════════════════"
 echo -e ""
 echo -e "Autoscript By NevermoreSSH"
 echo -e ""
+echo ""
+read -p "$( echo -e "Press ${orange}[ ${NC}${green}Enter${NC} ${CYAN}]${NC} Back to menu . . .") "
+menu

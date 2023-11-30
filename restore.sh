@@ -46,5 +46,6 @@ systemctl restart xray@trnone.service
 systemctl restart xray@xtrojan.service
 systemctl restart xray@trojan.service
 service cron restart
-sleep 2
-clear
+echo ""
+read -p "$( echo -e "Press ${orange}[ ${NC}${green}Enter${NC} ${CYAN}]${NC} Back to menu . . .") "
+menu

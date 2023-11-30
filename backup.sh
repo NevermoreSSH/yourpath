@@ -40,9 +40,9 @@ cp -r /home/vps/public_html /root/backup/public_html
 cp -r /etc/cron.d /root/backup/cron.d &> /dev/null
 cp -r /etc/crontab /root/backup/crontab &> /dev/null
 cd /root
-zip -r $InputPass $IP-$date-$domain-yourpath backup > /dev/null 2>&1
-rclone copy /root/$IP-$date-$domain-yourpath dr:backup/
-url=$(rclone link dr:backup/$IP-$date-$domain-yourpath)
+zip -r $InputPass $IP-$date-$domain-yourpath.zip backup > /dev/null 2>&1
+rclone copy /root/$IP-$date-$domain-yourpath.zip dr:backup/
+url=$(rclone link dr:backup/$IP-$date-$domain-yourpath.zip)
 id=(`echo $url | grep '^https' | cut -d'=' -f2`)
 link="https://drive.google.com/u/4/uc?id=${id}&export=download"
 clear
@@ -59,7 +59,7 @@ echo -e "\033[1;37m$link\033[0m"
 echo ""
 echo "If you want to restore data, please enter the link above"
 rm -rf /root/backup
-rm -r /root/$IP-$date-$domain-yourpath
+rm -r /root/$IP-$date-$domain-yourpath.zip
 echo ""
 read -p "$( echo -e "Press ${orange}[ ${NC}${green}Enter${NC} ${CYAN}]${NC} Back to menu . . .") "
 menu

@@ -12,7 +12,7 @@ NC='\e[0m'
 echo -n > /tmp/other.txt
 data=( `cat /usr/local/etc/xray/config.json | grep '^###' | cut -d ' ' -f 2 | sort | uniq`);
 echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-echo -e "\\E[0;41;36m     XRAY Vmess WS User Login      \E[0m"
+echo -e " \E[0;47;30m     XRAY Vmess WS User Login      \E[0m"
 echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 for akun in "${data[@]}"
 do

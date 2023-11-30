@@ -30,6 +30,7 @@ txtls=$(grep -c -E "^### $user" "/usr/local/etc/xray/xtrojan.json")
 tr=$(grep -c -E "^### $user" "/usr/local/etc/xray/trojan.json")
 # Total BANDWIDTH
 ttoday="$(vnstat -i eth0 | grep "today" | awk '{print $8" "substr ($9, 1, 1)}')"
+tyest="$(vnstat -i eth0 | grep "yesterday" | awk '{print $8" "substr ($9, 1, 1)}')"
 tmon="$(vnstat -i eth0 -m | grep "$(date +"%b '%y")" | awk '{print $9" "substr ($10, 1, 1)}')"
 clear
 echo ""
@@ -79,6 +80,7 @@ echo -e "${BB}——————————————————————
 echo -e "                 ${WB}»»» Total Bandwidth «««${NC}             "
 echo -e "${BB}————————————————————————————————————————————————————————${NC}"
 echo -e "  ${RB}♦️${NC} ${YB}Daily Data Usage    : $ttoday ${NC}"
+echo -e "  ${RB}♦️${NC} ${YB}Yesterday Usage     : $tyest ${NC}"
 echo -e "  ${RB}♦️${NC} ${YB}Monthly Data Usage  : $tmon ${NC}"
 echo -e "${BB}————————————————————————————————————————————————————————${NC}"
 echo ""

@@ -84,7 +84,7 @@ echo -e "  ${RB}♦️${NC} ${YB}Yesterday Usage     : $tyest ${NC}"
 echo -e "  ${RB}♦️${NC} ${YB}Monthly Data Usage  : $tmon ${NC}"
 echo -e "${BB}————————————————————————————————————————————————————————${WB}"
 echo ""
-read -p "Select From Options [ 1 - 23 ] : " menu
+read -p "Select From Options [ 1 - 24 ] : " menu
 case $menu in
 1)
 clear

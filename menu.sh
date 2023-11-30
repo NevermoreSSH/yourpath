@@ -22,9 +22,16 @@ uptime="$(uptime -p | cut -d " " -f 2-10)"
 # RAM Info
 tram=$(free -m | awk 'NR==2 {print $2}')
 uram=$(free -m | awk 'NR==2 {print $3}')
+# TOTAL ACC XRAYS WS & XTLS
+vmess=$(grep -c -E "^### $user" "/usr/local/etc/xray/config.json")
+vless=$(grep -c -E "^### $user" "/usr/local/etc/xray/vless.json")
+trws=$(grep -c -E "^### $user" "/usr/local/etc/xray/trojanws.json")
+txtls=$(grep -c -E "^### $user" "/usr/local/etc/xray/xtrojan.json")
+tr=$(grep -c -E "^### $user" "/usr/local/etc/xray/trojan.json")
 # Total BANDWIDTH
 ttoday="$(vnstat -i eth0 | grep "today" | awk '{print $8" "substr ($9, 1, 1)}')"
 tmon="$(vnstat -i eth0 -m | grep "$(date +"%b '%y")" | awk '{print $9" "substr ($10, 1, 1)}')"
+clear
 echo ""
 echo -e "${BB}————————————————————————————————————————————————————————${NC}"
 echo -e "      ${WB}Multiport Websocket Autoscript By NevermoreSSH${NC}"
@@ -40,11 +47,11 @@ echo -e "  ${RB}♦️${NC} ${YB}IPVPS   :  $IPVPS ${NC} "
 echo -e "${BB}————————————————————————————————————————————————————————${NC}"
 echo -e "                   ${WB}»»» XRAYS Menu «««${NC}          "
 echo -e "${BB}————————————————————————————————————————————————————————${NC}"
-echo -e "  ${RB}01.${NC} ${YB}XRAY VMESS WS${NC}"
-echo -e "  ${RB}02.${NC} ${YB}XRAY VLESS WS${NC}"
-echo -e "  ${RB}03.${NC} ${YB}XRAY TROJAN WS${NC}"
-echo -e "  ${RB}04.${NC} ${YB}XRAY TROJAN XTLS${NC}"
-echo -e "  ${RB}05.${NC} ${YB}XRAY TROJAN TCP${NC}"
+echo -e "  ${RB}01.${NC} ${YB}XRAY VMESS WS    ${WB}[${GB}${vmess}${WB}]${NC}"
+echo -e "  ${RB}02.${NC} ${YB}XRAY VLESS WS    ${WB}[${GB}${vless}${WB}]${NC}"
+echo -e "  ${RB}03.${NC} ${YB}XRAY TROJAN WS   ${WB}[${GB}${trws}${WB}]${NC}"
+echo -e "  ${RB}04.${NC} ${YB}XRAY TROJAN XTLS ${WB}[${GB}${txtls}${WB}]${NC}"
+echo -e "  ${RB}05.${NC} ${YB}XRAY TROJAN TCP  ${WB}[${GB}${tr}${WB}]${NC}"
 echo -e "${BB}————————————————————————————————————————————————————————${NC}"
 echo -e "                   ${WB}»»» VPS Menu «««${NC}                 "
 echo -e "${BB}————————————————————————————————————————————————————————${NC}"
@@ -67,7 +74,7 @@ echo -e "  ${RB}20.${NC} ${YB}BACKUP ${NC}"
 echo -e "  ${RB}21.${NC} ${YB}RESTORE ${NC}"
 echo -e "  ${RB}22.${NC} ${YB}REBOOT ${NC}"
 echo -e "  ${RB}23.${NC} ${YB}XRAY-CORE CHANGER ${NC}"
-echo -e "  ${RB}24.${NC} ${YB}LOGOUT ${NC}"
+#echo -e "  ${RB}24.${NC} ${YB}LOGOUT ${NC}"
 echo -e "${BB}————————————————————————————————————————————————————————${NC}"
 echo -e "                 ${WB}»»» Total Bandwidth «««${NC}             "
 echo -e "${BB}————————————————————————————————————————————————————————${NC}"
@@ -75,7 +82,7 @@ echo -e "  ${RB}♦️${NC} ${YB}Daily Data Usage    : $ttoday ${NC}"
 echo -e "  ${RB}♦️${NC} ${YB}Monthly Data Usage  : $tmon ${NC}"
 echo -e "${BB}————————————————————————————————————————————————————————${NC}"
 echo ""
-read -p "Select From Options [ 1 - 24 ] : " menu
+read -p "Select From Options [ 1 - 23 ] : " menu
 case $menu in
 1)
 clear
@@ -153,10 +160,10 @@ htop
 clear
 wget -q -O /usr/bin/xraychanger "https://raw.githubusercontent.com/NevermoreSSH/Xcore-custompath/main/xraychanger.sh" && chmod +x /usr/bin/xraychanger && xraychanger
 ;;
-24)
-clear
-exit && exit
-;;
+#24)
+#clear
+#exit && exit && exit
+#;;
 20)
 clear
 backup

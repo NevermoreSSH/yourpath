@@ -919,7 +919,7 @@ cat > /usr/local/etc/xray/xtrojan.json << END
   "inbounds": [
     {
       "port": 443,
-      "protocol": "trojan",
+      "protocol": "vless",
       "settings": {
         "clients": [
           {

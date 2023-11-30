@@ -13,12 +13,12 @@ echo -e "\e[36m╒════════════════════�
 echo -e " \E[0;41;36m          XRAY TROJAN TCP XTLS MENU         \E[0m"
 echo -e "\e[36m╘════════════════════════════════════════════╛\033[0m
 
- [\033[1;36m•1 \033[0m]  Add XRAY Vless TCP XTLS Account
- [\033[1;36m•2 \033[0m]  Add Trial XRAY Vless TCP XTLS Account
- [\033[1;36m•3 \033[0m]  Check User Login XRAY Vless TCP XTLS
- [\033[1;36m•4 \033[0m]  Delete XRAY Vless TCP XTLS Account
- [\033[1;36m•5 \033[0m]  Renew XRAY Vless TCP XTLS Account
- [\033[1;36m•6 \033[0m]  Check XRAY Vless TCP XTLS Config
+ [\033[1;36m•1 \033[0m]  Add XRAY TROJAN TCP XTLS Account
+ [\033[1;36m•2 \033[0m]  Add Trial XRAY TROJAN TCP XTLS Account
+ [\033[1;36m•3 \033[0m]  Check User Login XRAY TROJAN TCP XTLS
+ [\033[1;36m•4 \033[0m]  Delete XRAY TROJAN TCP XTLS Account
+ [\033[1;36m•5 \033[0m]  Renew XRAY TROJAN TCP XTLS Account
+ [\033[1;36m•6 \033[0m]  Check XRAY TROJAN TCP XTLS Config
 
  [\033[1;36m•0 \033[0m]  Back To Main Menu"
 echo ""

@@ -9,14 +9,14 @@ clear
 NUMBER_OF_CLIENTS=$(grep -c -E "^### " "/usr/local/etc/xray/xtrojan.json")
 	if [[ ${NUMBER_OF_CLIENTS} == '0' ]]; then
         echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-        echo -e "\\E[0;41;36m Delete XRAY Vless TCP XTLS Account \E[0m"
+        echo -e "\\E[0;41;36m Delete XRAY TROJAN TCP XTLS Account \E[0m"
         echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 		echo ""
 		echo "You have no existing clients!"
 		exit 1
 	fi
         echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-        echo -e "\\E[0;41;36m Delete XRAY Vless TCP XTLS Account \E[0m"
+        echo -e "\\E[0;41;36m Delete XRAY TROJAN TCP XTLS Account \E[0m"
         echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 	    echo " Select the existing client you want to remove"
 	    echo " Press CTRL+C to return"
@@ -37,7 +37,7 @@ rm -f /home/vps/public_html/$user-TRDIRECT.yaml /home/vps/public_html/$user-TRSP
 systemctl restart xray@xtrojan.service
 clear
 echo ""
-echo " XRAY Vless TCP XTLS Account Deleted"
+echo " XRAY TROJAN TCP XTLS Account Deleted"
 echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo " Client Name : $user"
 echo " Expired On  : $exp"

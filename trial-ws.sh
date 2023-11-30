@@ -44,7 +44,7 @@ EOF
 cat> /usr/local/etc/xray/$user-none.json << EOF
       {
       "v": "2",
-      "ps": "XRAY_VMESS_NON_TLS_${user}",
+      "ps": "XRAY_VMESS_NTLS_${user}",
       "add": "${domain}",
       "port": "${none}",
       "id": "${uuid}",

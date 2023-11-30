@@ -22,10 +22,10 @@ hariini=`date -d "0 days" +"%Y-%m-%d"`
 sed -i '/#trojan-xtls$/a\### '"$user $exp"'\
 },{"password": "'""$uuid""'","flow": "xtls-rprx-direct","email": "'""$user""'"' /usr/local/etc/xray/xtrojan.json
 
-trojanlink1="trojan://${uuid}@${sts}${domain}:443?allowInsecure=1&security=xtls&headerType=none&type=tcp&flow=xtls-rprx-direct&sni=${sni}#XRAY_TROJAN_DIRECT_${user}"
-trojanlink2="trojan://${uuid}@${sts}${domain}:443?allowInsecure=1&security=xtls&headerType=none&type=tcp&flow=xtls-rprx-direct-udp443&sni=${sni}#XRAY_TROJAN_DIRECTUDP443_${user}"
-trojanlink3="trojan://${uuid}@${sts}${domain}:443?allowInsecure=1&security=xtls&headerType=none&type=tcp&flow=xtls-rprx-splice&sni=${sni}#XRAY_TROJAN_SPLICE_${user}"
-trojanlink4="trojan://${uuid}@${sts}${domain}:443?allowInsecure=1&security=xtls&headerType=none&type=tcp&flow=xtls-rprx-splice-udp443&sni=${sni}#XRAY_TROJAN_SPLICEUDP443_${user}"
+trojanlink1="vless://${uuid}@${sts}${domain}:443?allowInsecure=1&security=xtls&headerType=none&type=tcp&flow=xtls-rprx-direct&sni=${sni}#XRAY_TROJAN_DIRECT_${user}"
+trojanlink2="vless://${uuid}@${sts}${domain}:443?allowInsecure=1&security=xtls&headerType=none&type=tcp&flow=xtls-rprx-direct-udp443&sni=${sni}#XRAY_TROJAN_DIRECTUDP443_${user}"
+trojanlink3="vless://${uuid}@${sts}${domain}:443?allowInsecure=1&security=xtls&headerType=none&type=tcp&flow=xtls-rprx-splice&sni=${sni}#XRAY_TROJAN_SPLICE_${user}"
+trojanlink4="vless://${uuid}@${sts}${domain}:443?allowInsecure=1&security=xtls&headerType=none&type=tcp&flow=xtls-rprx-splice-udp443&sni=${sni}#XRAY_TROJAN_SPLICEUDP443_${user}"
 
 cat > /home/vps/public_html/$user-TRDIRECT.yaml <<EOF
 port: 7890
@@ -332,7 +332,7 @@ service cron restart
 
 clear
 echo -e ""
-echo -e "════════════[TRIAL XRAY TROJAN TCP XTLS]════════════"
+echo -e "════════════[TRIAL XRAY VLESS TCP XTLS]════════════"
 echo -e "Remarks              : ${user}"
 echo -e "Domain               : ${domain}"
 echo -e "Password             : ${uuid}"
@@ -352,10 +352,10 @@ echo -e "Link Splice          : ${trojanlink3}"
 echo -e "═══════════════════"
 echo -e "Link Splice UDP 443  : ${trojanlink4}"
 echo -e "═══════════════════"
-echo -e "YAML Direct          : http://${MYIP2}:81/$user-TRDIRECT.yaml"
-echo -e "═══════════════════"
-echo -e "YAML Splice          : http://${MYIP2}:81/$user-TRSPLICE.yaml"
-echo -e "═══════════════════"
+#echo -e "YAML Direct          : http://${MYIP2}:81/$user-TRDIRECT.yaml"
+#echo -e "═══════════════════"
+#echo -e "YAML Splice          : http://${MYIP2}:81/$user-TRSPLICE.yaml"
+#echo -e "═══════════════════"
 echo -e "Created On           : $hariini"
 echo -e "Expired On           : $exp"
 echo -e "═══════════════════"

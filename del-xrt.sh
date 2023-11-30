@@ -16,7 +16,7 @@ NUMBER_OF_CLIENTS=$(grep -c -E "^### " "/usr/local/etc/xray/xtrojan.json")
 		exit 1
 	fi
         echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-        echo -e "\\E[0;41;36m Delete XRAY TROJAN TCP XTLS Account \E[0m"
+        echo -e "\\E[0;47;30m Delete XRAY TROJAN TCP XTLS Account \E[0m"
         echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 	    echo " Select the existing client you want to remove"
 	    echo " Press CTRL+C to return"

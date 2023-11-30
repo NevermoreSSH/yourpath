@@ -45,3 +45,6 @@ rm -rf /tmp/iptrojanxrt.txt
 rm -rf /tmp/other.txt
 done
 echo ""
+echo ""
+read -p "$( echo -e "Press ${orange}[ ${NC}${green}Enter${NC} ${CYAN}]${NC} Back to menu . . .") "
+menu

@@ -34,7 +34,7 @@ domain=$(cat /root/domain)
 MYIP2=$(wget -qO- ipv4.icanhazip.com);
 until [[ $user =~ ^[a-zA-Z0-9_]+$ && ${user_EXISTS} == '0' ]]; do
             echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-            echo -e " \E[0;47;30m     Add XRAY Trojan TCP Account   \E[0m"
+            echo -e "\\E[0;47;30m     Add XRAY Trojan TCP Account   \E[0m"
             echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 
 		read -rp "Username : " -e user
@@ -43,7 +43,7 @@ until [[ $user =~ ^[a-zA-Z0-9_]+$ && ${user_EXISTS} == '0' ]]; do
 		if [[ ${user_EXISTS} == '1' ]]; then
 clear
 		    echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-            echo -e " \E[0;47;30m     Add XRAY Trojan TCP Account   \E[0m"
+            echo -e "\\E[0;47;30m     Add XRAY Trojan TCP Account   \E[0m"
             echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 			echo ""
 			echo "A client with the specified name was already created, please choose another name."

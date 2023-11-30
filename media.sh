@@ -13,7 +13,7 @@ Font_Suffix="\033[0m";
 
 clear;
 echo -e "  \033[1;37m${Font_Purple}Media Stream Unlocker Test Mod By NevermoreSSH${Font_Suffix}\033[0m";
-echo -e "  \033[1;37mVersion : ${Font_SkyBlue}${shell_version}${Font_Suffix}\033[0m";
+echo -e "  \033[1;37mVersion : 2.0 \033[0m";
 echo -e "  \033[1;37mTime    : $(date)\033[0m"
 
 export LANG="en_US.UTF-8";
@@ -289,5 +289,5 @@ echo -e "${Font_Green}Finished Test${Font_Suffix}"
 echo -e ""
 echo -e "Script Mod By NevermoreSSH"
 echo ""
-read -p "$( echo -e "Press ${orange}[ ${NC}${green}Enter${NC} ${CYAN}]${NC} Back to menu . . .") "
+read -p "$( echo -e "Press ${orange}[ ${NC}${Font_Green}Enter${Font_White} ${CYAN}]${Font_White} Back to menu . . .") "
 menu

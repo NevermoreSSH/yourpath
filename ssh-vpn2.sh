@@ -282,7 +282,7 @@ history -c
 echo "unset HISTFILE" >> /etc/profile
 
 cd
-rm -f /root/ssh-vpn.sh
+rm -f /root/ssh-vpn2.sh
 
 # finishing
 clear

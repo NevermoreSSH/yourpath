@@ -22,6 +22,7 @@ load_cpu=$(printf '%-3s' "$(top -bn1 | awk '/Cpu/ { cpu = "" 100 - $8 "%" }; END
 #Domain & IPVPS
 domain=$(cat /root/domain)
 IPVPS=$(curl -s ipinfo.io/ip)
+IPVPS=$(curl -sS ifconfig.me )
 # OS Uptime
 uptime="$(uptime -p | cut -d " " -f 2-10)"
 # RAM Info

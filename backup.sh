@@ -13,6 +13,9 @@ orange='\e[0;33m'
 NC='\e[0m'
 clear
 IP=$(wget -qO- icanhazip.com);
+IP=$(curl -s ipinfo.io/ip )
+IP=$(curl -sS ipv4.icanhazip.com)
+IP=$(curl -sS ifconfig.me )
 date=$(date +"%Y-%m-%d-%H:%M:%S")
 domain=$(cat /root/domain)
 clear

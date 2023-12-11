@@ -54,6 +54,9 @@ if [ "$(systemd-detect-virt)" == "openvz" ]; then
 		exit 1
 fi
 MYIP=$(wget -qO- icanhazip.com/ip);
+MYIP=$(curl -s ipinfo.io/ip )
+MYIP=$(curl -sS ipv4.icanhazip.com)
+MYIP=$(curl -sS ifconfig.me )
 secs_to_human() {
     echo "Installation time : $(( ${1} / 3600 )) hours $(( (${1} / 60) % 60 )) minutes $(( ${1} % 60 )) seconds"
 }

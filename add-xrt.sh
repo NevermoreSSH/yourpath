@@ -85,7 +85,7 @@ trojanlink4="trojan://${uuid}@${sts}${domain}:443?allowInsecure=1&security=xtls&
 systemctl restart xray@xtrojan.service
 service cron restart
 
-cat > /home/vps/public_html/$user-TRDIRECT.yaml <<EOF
+cat > /home/vps/public_html/$user-$exp-TRDIRECT.yaml <<EOF
 port: 7890
 socks-port: 7891
 redir-port: 7892
@@ -235,7 +235,7 @@ rules:
   - MATCH,NevermoreSSH-AUTOSCRIPT
 EOF
 
-cat > /home/vps/public_html/$user-TRSPLICE.yaml <<EOF
+cat > /home/vps/public_html/$user-$exp-TRSPLICE.yaml <<EOF
 port: 7890
 socks-port: 7891
 redir-port: 7892

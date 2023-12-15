@@ -124,7 +124,7 @@ systemctl restart xray.service
 systemctl restart xray@none.service
 service cron restart
 
-cat > /home/vps/public_html/$user-VMESSTLS.yaml <<EOF
+cat > /home/vps/public_html/$user-$exp-VMESSTLS.yaml <<EOF
 port: 7890
 socks-port: 7891
 redir-port: 7892
@@ -281,7 +281,7 @@ rules:
   - MATCH,NevermoreSSH-Autoscript
 EOF
 
-cat > /home/vps/public_html/$user-VMESSNTLS.yaml <<EOF
+cat > /home/vps/public_html/$user-$exp-VMESSNTLS.yaml <<EOF
 port: 7890
 socks-port: 7891
 redir-port: 7892

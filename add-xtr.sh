@@ -85,7 +85,7 @@ trojanlink="trojan://${uuid}@${sts}${domain}:443?security=tls&type=tcp&allowInse
 systemctl restart xray@trojan.service
 service cron restart
 
-cat > /home/vps/public_html/$user-TRTCP.yaml <<EOF
+cat > /home/vps/public_html/$user-$exp-TRTCP.yaml <<EOF
 port: 7890
 socks-port: 7891
 redir-port: 7892

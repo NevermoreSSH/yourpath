@@ -210,7 +210,7 @@ dns:
     - "*.mcdn.bilivideo.cn"
     - +.media.dssott.com
 proxies:
-  - name: XRAY_VLESS_TLS_${user}
+  - name: XRAY_VLESS_TLS_${user}_${exp}
     server: ${sts}${domain}
     port: 443
     type: vless
@@ -366,7 +366,7 @@ dns:
     - "*.mcdn.bilivideo.cn"
     - +.media.dssott.com
 proxies:
-  - name: XRAY_VLESS_NTLS_${user}
+  - name: XRAY_VLESS_NTLS_${user}_${exp}
     server: ${sts}${domain}
     port: 80
     type: vless

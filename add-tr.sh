@@ -89,7 +89,7 @@ service cron restart
 trojanlink1="trojan://${uuid}@${domain}:443?type=ws&security=tls&host=${domain}&path=/trojan-tls&sni=${sni}#${user}"
 trojanlink2="trojan://${uuid}@${domain}:80?type=ws&security=none&host=${domain}&path=/trojan-ntls#${user}"
 
-cat > /home/vps/public_html/$user-TRTLS.yaml <<EOF
+cat > /home/vps/public_html/$user-$exp-TRTLS.yaml <<EOF
 port: 7890
 socks-port: 7891
 redir-port: 7892

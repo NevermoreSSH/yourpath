@@ -84,6 +84,7 @@ echo -e "  ${RB}21.${NC} ${YB}RESTORE ${NC}"
 echo -e "  ${RB}22.${NC} ${YB}REBOOT ${NC}"
 echo -e "  ${RB}23.${NC} ${YB}XRAY-CORE MENU ${NC}"
 echo -e "  ${RB}24.${NC} ${YB}SWAPRAM MENU ${NC}"
+echo -e "  ${RB}25.${NC} ${YB}CLEAR LOG ${NC}"
 echo -e "  ${RB}25.${NC} ${YB}EXIT ${NC}"
 echo -e "${BB}————————————————————————————————————————————————————————${NC}"
 echo -e "                 ${WB}»»» Total Bandwidth «««${NC}             "
@@ -176,6 +177,10 @@ clear
 wget -q -O /usr/bin/swapram "https://raw.githubusercontent.com/NevermoreSSH/swapram/main/swapram.sh" && chmod +x /usr/bin/swapram && swapram
 ;;
 25)
+clear
+cleaner
+;;
+26)
 clear
 neofetch
 ;;

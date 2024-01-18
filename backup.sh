@@ -39,6 +39,7 @@ echo " Please Wait VPS Data Backup In Progress . . . "
 #cp -r /var/lib/premium-script/ /root/backup/premium-script
 #cp -r /usr/local/etc/xray /root/backup/xray
 cp -r /usr/local/etc/xray/*.json /root/backup/ >/dev/null 2>&1
+cp -r /root/domain /root/backup/ &> /dev/null
 cp -r /home/vps/public_html /root/backup/public_html
 cp -r /etc/cron.d /root/backup/cron.d &> /dev/null
 cp -r /etc/crontab /root/backup/crontab &> /dev/null

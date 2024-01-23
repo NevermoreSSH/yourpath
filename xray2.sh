@@ -77,7 +77,7 @@ mkdir -p /usr/local/etc/xray
 latest_version="$(curl -s https://api.github.com/repos/XTLS/Xray-core/releases | grep tag_name | sed -E 's/.*"v(.*)".*/\1/' | head -n 1)"
 
 # Installation Xray Core
-xraycore_link="https://github.com/XTLS/Xray-core/releases/download/v$latest_version/xray-linux-64.zip"
+xraycore_link="https://github.com/NevermoreSSH/Xray-core/releases/download/v$latest_version/xray-linux-64.zip"
 
 # Unzip Xray Linux 64
 cd `mktemp -d`

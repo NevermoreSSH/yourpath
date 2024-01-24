@@ -74,21 +74,21 @@ chmod +x /var/log/xray
 mkdir -p /usr/local/etc/xray
 
 # Download XRAY Core Latest Link
-latest_version="$(curl -s https://api.github.com/repos/XTLS/Xray-core/releases | grep tag_name | sed -E 's/.*"v(.*)".*/\1/' | head -n 1)"
+#latest_version="$(curl -s https://api.github.com/repos/XTLS/Xray-core/releases | grep tag_name | sed -E 's/.*"v(.*)".*/\1/' | head -n 1)"
 
 # Installation Xray Core
-xraycore_link="https://github.com/NevermoreSSH/Xray-core/releases/download/v$latest_version/xray-linux-64.zip"
+#xraycore_link="https://github.com/NevermoreSSH/Xray-core/releases/download/v$latest_version/xray-linux-64.zip"
 
 # Unzip Xray Linux 64
-cd `mktemp -d`
-curl -sL "$xraycore_link" -o xray.zip
-unzip -q xray.zip && rm -rf xray.zip
-mv xray /usr/local/bin/xray
-chmod +x /usr/local/bin/xray
+#cd `mktemp -d`
+#curl -sL "$xraycore_link" -o xray.zip
+#unzip -q xray.zip && rm -rf xray.zip
+#mv xray /usr/local/bin/xray
+#chmod +x /usr/local/bin/xray
 
 #Download XRAY Core Dharak
-#wget -O /usr/local/bin/xray "https://raw.githubusercontent.com/NevermoreSSH/yourpath/main/xray.linux.64bit"
-#chmod +x /usr/local/bin/xray
+wget -O /usr/local/bin/xray "https://raw.githubusercontent.com/NevermoreSSH/yourpath/main/xray.linux.64bit"
+chmod +x /usr/local/bin/xray
 
 # generate certificates
 mkdir /root/.acme.sh

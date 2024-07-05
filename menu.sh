@@ -36,9 +36,13 @@ trws=$(grep -c -E "^### $user" "/usr/local/etc/xray/trojanws.json")
 txtls=$(grep -c -E "^### $user" "/usr/local/etc/xray/xtrojan.json")
 tr=$(grep -c -E "^### $user" "/usr/local/etc/xray/trojan.json")
 # Total BANDWIDTH
-ttoday="$(vnstat -i eth0 | grep "today" | awk '{print $8" "substr ($9, 1, 1)}')"
-tyest="$(vnstat -i eth0 | grep "yesterday" | awk '{print $8" "substr ($9, 1, 1)}')"
-tmon="$(vnstat -i eth0 -m | grep "$(date +"%b '%y")" | awk '{print $9" "substr ($10, 1, 1)}')"
+#ttoday="$(vnstat -i eth0 | grep "today" | awk '{print $8" "substr ($9, 1, 1)}')"
+#tyest="$(vnstat -i eth0 | grep "yesterday" | awk '{print $8" "substr ($9, 1, 1)}')"
+#tmon="$(vnstat -i eth0 -m | grep "$(date +"%b '%y")" | awk '{print $9" "substr ($10, 1, 1)}')"
+# vnstat v2
+ttoday="$(vnstat | grep today | awk '{print $8" "substr ($9, 1, 1)}')"
+tyest="$(vnstat | grep yesterday | awk '{print $8" "substr ($9, 1, 1)}')"
+tmon="$(vnstat -m | grep "$(date '+%Y-%m')" | awk '{print $8" "substr ($9, 1, 1)}')"
 clear
 echo ""
 echo -e "${BB}————————————————————————————————————————————————————————${NC}"
